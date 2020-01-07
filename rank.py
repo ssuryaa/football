@@ -1,16 +1,18 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 
 from collections import Counter
 
-def get_rank(stats):
-    attr = 'TB' # through ball
+def get_pl_rank(stats):
+    attr = 'long_Cmp%' # through ball
     temp_dict = {}
     nineties_played = {}
     for key, value in stats.items():
-        #print({k: v for k, v in sorted(stats[key].items(), key=lambda item: item[1])})
-       temp_dict[key] = float(stats[key][attr])
-       nineties_played[key] = float(stats[key]['90s'])
+        print(stats[key][attr])
+        print('float: {}' . format(float(stats[key][attr])))
+        #temp_dict[key] = float(stats[key][attr])
+        #nineties_played[key] = float(stats[key]['90s'])
     
+    exit()
     a = ({k: v for k, v in sorted(temp_dict.items(), key=lambda item: item[1])})
 
     top_n = 10
@@ -31,3 +33,6 @@ def get_rank(stats):
     for x in high:
         print(x)
 
+
+def get_club_rank(stats):
+    pass

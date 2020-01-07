@@ -4,7 +4,7 @@ import argparse
 
 from read_data import read_data
 from get_player_names import get_player_names
-from rank import get_rank
+from rank import get_pl_rank, get_club_rank
 
 def get_arguments():
     parser = argparse.ArgumentParser()
@@ -25,7 +25,7 @@ def main():
     '''
 
     get_player_names(args.csv_file)
-    get_rank(std_stats)
+    get_pl_rank(std_stats)
     
 
 if __name__ == '__main__':

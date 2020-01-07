@@ -1,6 +1,6 @@
 # Premier league player statistics
 Beginner-level data analytics of premier league football\
-Data taken from https://fbref.com/en/
+Data (and glossary) taken from https://fbref.com/en/
 
 **TODO**
 - [ ] Player's percentile in the entire league (for a particular template like StatsBomb's). 

@@ -4,6 +4,7 @@ import argparse
 
 from read_data import read_data
 from get_player_names import get_player_names
+from rank import get_rank
 
 def get_arguments():
     parser = argparse.ArgumentParser()
@@ -14,14 +15,17 @@ def get_arguments():
 def main():
     args = get_arguments()
     std_stats = read_data(args.csv_file)
-    print('Number of players: {}' . format(len(std_stats.keys())))
+    #print('Number of players: {}' . format(len(std_stats.keys())))
 
+    '''
     player_name = 'kevin_de_bruyne'
     print('player: {}' . format(player_name))
     for key, val in std_stats[player_name].items():
         print('{} --- {}' . format(key, val))
+    '''
 
     get_player_names(args.csv_file)
+    get_rank(std_stats)
     
 
 if __name__ == '__main__':

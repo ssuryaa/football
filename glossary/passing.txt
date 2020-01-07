@@ -1,0 +1,74 @@
+
+Rk -- Rank
+This is a count of the rows from top to bottom.
+It is recalculated following the sorting of a column.
+Nation -- Nationality of the player.
+First, we check our records in international play at senior level.
+Then youth level.
+Then citizenship presented on wikipedia.
+Finally, we use their birthplace when available.
+Pos -- GK - Goalkeeper
+DF - Defender
+MF - Midfielder
+FW - Forward
+FB - Fullback
+CD - Central Defender
+DM - Defensive Midfielder
+CM - Central Midfielder
+WM - Wide Midfielder
+AM - Attacking Midfielder
+Playing Time
+90s -- 90s played
+Minutes played divided by 90
+Assists
+Ast -- Assists
+xA -- Expected Assists
+xG which follows a pass that assists a shot
+Provided by StatsBomb.
+An underline indicates there is a match that is missing data, but will be updated when available.
+A-xA -- Assists minus Expected Assists
+Provided by StatsBomb.
+An underline indicates there is a match that is missing data, but will be updated when available.
+KP -- Key Passes
+Passes that directly lead to a shot (assisted shots)
+Total
+Cmp -- Passes Completed
+Att -- Passes Attempted
+Cmp% -- Pass Completion Percentage
+Short
+Cmp -- Passes Completed
+Passes of fewer than 5 yards
+Att -- Passes Attempted
+Passes of fewer than 5 yards
+Cmp% -- Pass Completion Percentage
+Passes of fewer than 5 yards
+Medium
+Cmp -- Passes Completed
+Passes between 5 and 25 yards
+Att -- Passes Attempted
+Passes between 5 and 25 yards
+Cmp% -- Pass Completion Percentage
+Passes between 5 and 25 yards
+Long
+Cmp -- Passes Completed
+Passes longer than 25 yards
+Att -- Passes Attempted
+Passes longer than 25 yards
+Cmp% -- Pass Completion Percentage
+Passes longer than 25 yards
+Left -- Passing attempted using left foot
+Right -- Passing attempted using right foot
+FK -- Passes attempted from free kicks
+TB -- Through Balls
+Completed pass sent between back defenders into open space
+CK -- Corner Kicks
+TI -- Throw-Ins taken
+1/3 -- Passes into Final Third
+Completed passes that enter the 1/3 of the pitch closest to the goal
+Not including set pieces
+PPA -- Passes into Penalty Area
+Completed passes into the 18-yard box
+Not including set pieces
+CrsPA -- Crosses into Penalty Area
+Completed crosses into the 18-yard box
+Not including set pieces

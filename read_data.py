@@ -13,10 +13,12 @@ def read_data(inp_file):
     
     with open(inp_file, 'r') as f:
         csv_obj = csv.reader(f)
-        keys = next(csv_obj) # next reads just the next row of the csv file pointed         
-
+        keys = next(csv_obj) # next reads just the next row of the csv file pointed 
+        print('list of stats: {}' . format(keys))
         for row in csv_obj:
             name = row[1].split('\\')[0].replace(' ', '_')
+            name = name.lower() # converting to all lower case
+            name = name.replace('-', '_') # few players with middle names had - instead of _. this line takes care of it
             nationality = row[2].split(' ')[1] # name has a backslash and repeats once. this line deletes the unnecessary stuff
             stats[name][keys[2]] = nationality # like name, nationality also has unnecessary stuff. this line takes care of it
             for x in range(3, len(row)):

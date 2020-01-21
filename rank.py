@@ -2,21 +2,23 @@
 
 from collections import Counter
 
-def get_pl_rank(stats):
-    attr = 'long_Cmp%' # through ball
+def rank_players(stats_dir, attr):
     temp_dict = {}
     nineties_played = {}
-    for key, value in stats.items():
-        print(stats[key][attr])
-        print('float: {}' . format(float(stats[key][attr])))
-        #temp_dict[key] = float(stats[key][attr])
-        #nineties_played[key] = float(stats[key]['90s'])
+    for key, value in stats_dir.items():
+        temp_dict[key] = float(stats_dir[key][attr])
+        nineties_played[key] = float(stats_dir[key]['90s'])
     
-    exit()
     a = ({k: v for k, v in sorted(temp_dict.items(), key=lambda item: item[1])})
 
+    return a, nineties_played
+
+def get_pl_rank(stats):
+    
+    attr = 'PPA' # through ball
+    a, nineties_played = rank_players(stats, attr)
     top_n = 10
-    nineties_threshold = 10 # the player should have played at least 5 90s 
+    nineties_threshold = 10 # the player should have played at least these many 90s 
 
     kp_ninety = {}
     for key, val in a.items():

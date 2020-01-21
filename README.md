@@ -7,6 +7,7 @@ Data (and glossary) taken from https://fbref.com/en/
 - [ ] Player's percentile withinin their team (for a particular template like StatsBomb's).  
 - [ ] Top n players in the league at a specific metric. 
 - [ ] Top n players in a team at a specific metric. 
+- [ ] List all stats for a given template (shooting, passing, or standard)
 
 **Notes**
 - [ ] when ranking long pass completion percentage, cannot convert to float error pops up

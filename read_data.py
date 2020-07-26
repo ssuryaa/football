@@ -14,7 +14,7 @@ def read_data(inp_file):
     with open(inp_file, 'r') as f:
         csv_obj = csv.reader(f)
         keys = next(csv_obj) # next reads just the next row of the csv file pointed 
-        print('list of stats: {}\n' . format(keys))
+        #print('list of stats: {}\n' . format(keys))
         for row in csv_obj:
             name = row[1].split('\\')[0].replace(' ', '_')
             name = name.lower() # converting to all lower case

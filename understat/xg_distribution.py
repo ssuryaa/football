@@ -23,6 +23,10 @@ from understat import Understat
 #leaguename = 'epl'
 #leaguename = 'la liga'
 
+class Vividict(dict):
+    def __missing__(self, key):
+        value = self[key] = type(self)()
+        return value
 
 async def get_playerid(playername, leaguename, teamname, season):
 	async with aiohttp.ClientSession() as session:
@@ -37,6 +41,14 @@ async def get_shots(playerid):
 		player_shots = await understat.get_player_shots(playerid)
 		return player_shots		
 
+async def league_table(team_stats):
+	async with aiohttp.ClientSession() as session:
+		understat = Understat(session)
+		table = await understat.get_league_table("EPL", "2019")
+		print(table[0])
+		for x in table:
+			#team_stats[x[0]][x[]]
+			print(x[0], x[7])
 
 def plot(xg):
 	plt.hist(xg, bins=10, edgecolor='black', facecolor='red')
@@ -47,32 +59,42 @@ def plot(xg):
 
 def main():
 
-	playernames = ['Robert Lewandowski', 'Lionel Messi', 'Harry Kane', 'Mohamed Salah']
-	leaguenames = ['bundesliga','la liga', 'epl', 'epl']
-	teamnames = ['Bayern Munich', 'Barcelona', 'Tottenham', 'Liverpool']
-	season = 2018
+	#playernames = ['Robert Lewandowski', 'Lionel Messi', 'Harry Kane', 'Mohamed Salah']
+	#leaguenames = ['bundesliga','la liga', 'epl', 'epl']
+	#teamnames = ['Bayern Munich', 'Barcelona', 'Tottenham', 'Liverpool']
+
+	playernames = ['Mohamed Salah']
+	leaguenames = ['epl']
+	teamnames = ['Liverpool']
+	season = 2019
 
 	edgecolors = ['midnightblue', 'red', 'navy', 'gold']
 	facecolors = ['crimson', 'mediumblue', 'ghostwhite', 'red']
 
-	fig, ax = plt.subplots(2,2)
+	fig, ax = plt.subplots(2,2)	
 
+	team_stats = Vividict()
+	loop = asyncio.get_event_loop()
+	loop.run_until_complete(league_table(team_stats))
+	
 	for x in range(len(playernames)):
-		loop = asyncio.get_event_loop()
 		playerid = loop.run_until_complete(get_playerid(playernames[x], leaguenames[x], teamnames[x], season))
 
 		print('Player: {} - id: {}'.format(playernames[x], playerid))
-		player_shots = loop.run_until_complete(get_shots(playerid))
-		print(len(player_shots))
+		player_shots = loop.run_until_complete(get_shots(playerid))		
+
 		xg = []
 		for y in range(len(player_shots)):
 			xg.append(float(player_shots[y]['xG']))
 		xdim = math.floor(x/2)
 		ydim = x%2
-		ax[xdim,ydim].hist(xg, bins=50, edgecolor=edgecolors[x], facecolor=facecolors[x])
+		a=ax[xdim,ydim].hist(xg, bins=50, edgecolor=edgecolors[x], facecolor=facecolors[x])
+		#print(a)
 		ax[xdim,ydim].set_title(playernames[x])
 		ax[xdim,ydim].set_xlabel('xG')
 		ax[xdim,ydim].set_ylabel('Number of shots')
+
+		#exit()
 
 	fig.tight_layout()
 	fig.savefig('plot')	

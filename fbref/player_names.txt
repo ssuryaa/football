@@ -1,5 +1,4 @@
 
- player
  patrick_van_aanholt
  max_aarons
  tammy_abraham
@@ -20,7 +19,6 @@
  felipe_anderson
  florin_andone
  angeliño
- faustino_anjorin
  michail_antonio
  stuart_armstrong
  kepa_arrizabalaga
@@ -29,7 +27,6 @@
  serge_aurier
  jordan_ayew
  césar_azpilicueta
- eric_bailly
  leighton_baines
  fabián_balbuena
  george_baldock
@@ -38,17 +35,12 @@
  ashley_barnes
  harvey_barnes
  chris_basham
- borja_bastón
  michy_batshuayi
  jan_bednarek
  héctor_bellerín
  ryan_bennett
- ryan_bennett
- nabil_bentaleb
  christian_benteke
  jóhann_berg_guðmundsson
- sander_berge
- steven_bergwijn
  bernard
  bernardo
  ryan_bertrand
@@ -58,17 +50,11 @@
  willy_boly
  gaëtan_bong
  sofiane_boufal
- jarrod_bowen
  robbie_brady
- jarrad_branthwaite
  claudio_bravo
- armando_broja
- david_brooks
- josh_brownhill
  emi_buendía
  dan_burn
  sam_byram
- willy_caballero
  gary_cahill
  dominic_calvert_lewin
  víctor_camarasa
@@ -116,18 +102,14 @@
  moussa_djenepo
  matt_doherty
  abdoulaye_doucouré
- thomas_doyle
- danny_drinkwater
  danny_drinkwater
  josip_drmić
  martin_dúbravka
- ondrej_duda
  shane_duffy
  paul_dummett
  lewis_dunk
  ederson
  john_egan
- harvey_elliot
  ahmed_elmohamady
  björn_engels
  christian_eriksen
@@ -136,8 +118,6 @@
  fabinho
  ralf_fährmann
  kiko_femenía
- bruno_fernandes
- gedson_fernandes
  federico_fernández
  fernandinho
  roberto_firmino
@@ -151,7 +131,6 @@
  ryan_fraser
  fred
  ryan_fredericks
- kieron_freeman
  luke_freeman
  christian_fuchs
  eric_garcía
@@ -168,7 +147,6 @@
  andré_gomes
  angel_gomes
  joe_gomez
- anthony_gordon
  dan_gosling
  andre_gray
  demarai_gray
@@ -202,15 +180,12 @@
  will_hughes
  pierre_højbjerg
  jordon_ibe
- adam_idah
- odion_ighalo
  kelechi_iheanacho
  danny_ings
  alex_iwobi
  phil_jagielka
  alireza_jahanbakhsh
  daniel_james
- matty_james
  reece_james
  daryl_janmaat
  gabriel_jesus
@@ -228,11 +203,9 @@
  moise_kean
  michael_keane
  naby_keïta
- lloyd_kelly
  martin_kelly
  max_kilman
  joshua_king
- timm_klose
  jonathan_kodjia
  sead_kolašinac
  ezri_konsa
@@ -244,12 +217,10 @@
  adam_lallana
  érik_lamela
  tariq_lamptey
- tariq_lamptey
  henri_lansbury
  manuel_lanzini
  aymeric_laporte
  jamaal_lascelles
- valentino_lazaro
  moritz_leitner
  florian_lejeune
  aaron_lennon
@@ -261,7 +232,6 @@
  hugo_lloris
  giovani_lo_celso
  jürgen_locadia
- ruben_loftus_cheek
  kevin_long
  shane_long
  matthew_longstaff
@@ -271,7 +241,6 @@
  david_luiz
  douglas_luiz
  john_lundstram
- alexis_mac_allister
  james_maddison
  harry_maguire
  riyad_mahrez
@@ -279,13 +248,10 @@
  sadio_mané
  javier_manquillo
  solly_march
- pablo_marí
  adrian_mariappa
  anthony_martial
  david_martin
- josh_martin
  martinelli
- emiliano_martínez
  adam_masina
  arthur_masuaku
  juan_mata
@@ -310,9 +276,7 @@
  luka_milivojević
  james_milner
  yerry_mina
- takumi_minamino
  tyrone_mings
- tyrick_mitchell
  henrikh_mkhitaryan
  nacho_monreal
  martín_montoya
@@ -335,9 +299,7 @@
  reiss_nelson
  pedro_neto
  rúben_neves
- jeremy_ngakia
  oumar_niasse
- eddie_nketiah
  mark_noble
  oliver_norwood
  ørjan_nyland
@@ -354,16 +316,13 @@
  troy_parrott
  rui_patrício
  pedro
- joão_pedro
  nicolas_pépé
  andreas_pereira
  ricardo_pereira
  roberto_pereyra
  ayoze_pérez
  jordan_pickford
- brandon_pierrick
  erik_pieters
- daniel_podence
  paul_pogba
  nick_pope
  dennis_praet
@@ -371,13 +330,10 @@
  davy_pröpper
  teemu_pukki
  christian_pulisic
- ignacio_pussetto
  domingos_quina
  aaron_ramsdale
- darren_randolph
  marcus_rashford
  nathan_redmond
- pepe_reina
  declan_rice
  richarlison
  diego_rico
@@ -387,26 +343,20 @@
  patrick_roberts
  andrew_robertson
  callum_robinson
- jack_robinson
  rodri
  jay_rodriguez
- jack_rodwell
  marcos_rojo
  oriol_romeu
  danny_rose
- danny_rose
  antonio_rüdiger
- lukas_rupp
  mathew_ryan
  allan_saint_maximin
  romain_saïss
  bukayo_saka
  mamadou_sakho
  mohamed_salah
- mbwana_samatta
  carlos_sánchez
  davinson_sánchez
- leroy_sané
  ismaila_sarr
  fabian_schär
  ezequiel_schelotto
@@ -425,14 +375,11 @@
  jack_simpson
  moussa_sissoko
  oliver_skipp
- william_smallbone
  adam_smith
  emile_smith_rowe
  robert_snodgrass
  cédric_soares
- cédric_soares
  dominic_solanke
- tomáš_souček
  çağlar_söyüncü
  dennis_srbeny
  jack_stacey
@@ -447,25 +394,19 @@
  isaac_success
  ki_sung_yueng
  andrew_surman
- sam_surridge
- japhet_tanganga
  matt_targett
  james_tarkowski
  charlie_taylor
  neil_taylor
- nathan_tella
  alexander_tettey
- max_thompson
  youri_tielemans
  kieran_tierney
  james_tomkins
  fikayo_tomori
  lucas_torreira
  cenk_tosun
- cenk_tosun
  andros_townsend
  adama_traoré
- mark_travers
  trézéguet
  leandro_trossard
  tom_trybull
@@ -473,7 +414,6 @@
  yan_valery
  jesús_vallejo
  jamie_vardy
- indiana_vassilev
  jan_vertonghen
  jannik_vestergaard
  rúben_vinagre
@@ -481,7 +421,6 @@
  matěj_vydra
  theo_walcott
  kyle_walker
- kyle_walker_peters
  kyle_walker_peters
  aaron_wan_bissaka
  victor_wanyama
@@ -494,7 +433,6 @@
  georginio_wijnaldum
  jetro_willems
  brandon_williams
- neco_williams
  willian
  joe_willock
  jack_wilshere
@@ -511,5 +449,4 @@
  wilfried_zaha
  christoph_zimmermann
  oleksandr_zinchenko
- richairo_živković
  kurt_zouma

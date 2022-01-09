@@ -92,7 +92,8 @@ def main():
 		attr = {'Pressures_Def 3rd', 'Tackles_Def 3rd', 'Vs Dribbles_Past', 'Pressures_Succ', 'Tackles_TklW'}
 
 	stats = read_data(inp_file)
-
+	print(stats)
+	
 	glossary = get_glossary()
 
 	player = 'virgil_van_dijk'
@@ -110,8 +111,13 @@ def main():
 	
 	#attr1 = 'Pressures_Def 3rd'
 	#attr2 = 'Tackles_Def 3rd'
-	attr1 = 'Pressures_Succ'
-	attr2 = 'Tackles_TklW'
+
+	#attr1 = 'Pressures_Succ'
+	#attr2 = 'Tackles_TklW'
+
+	attr1 = '1/3'
+	attr2 = 'TB'
+
 	attr1_stats = get_pl_rank(attr1,stats)
 	attr2_stats = get_pl_rank(attr2,stats)
 	scatter_plot(attr1, attr2, stats)

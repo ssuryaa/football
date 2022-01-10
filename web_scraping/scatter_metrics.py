@@ -15,7 +15,7 @@ from matplotlib.pyplot import figure
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 # figure(figsize=(400, 300), dpi=200)
 
-def get_top_k(raw_data, database, percentiles):
+def plot_scatter(raw_data, database, percentiles, stats):
     top = database['Age'].str.split('-')
     age_yr = []
     for x in range(len(top)):
@@ -31,7 +31,6 @@ def get_top_k(raw_data, database, percentiles):
 
     # print(raw_data.sort_values(by=['SCA_Drib'], ascending=False)['SCA_Drib'][:5])
     # stats = ['Total_Pass_PrgDist', 'Carries_PrgDist']
-    stats = ['SCA_PassLive', 'SCA_Drib']
     # print("\nMean 90s: {:2.2f} \t Median 90s: {:2.2f}\n".format(database['nineties'].mean(), database['nineties'].median()))
     # print(database.query('nineties > 8').sort_values(by=[s], ascending=False)[s][:10])
     d = {}
@@ -56,16 +55,19 @@ def get_top_k(raw_data, database, percentiles):
     fig, ax = plt.subplots()
     stat1_mean = df2[stats[0]].mean()
     stat2_mean = df2[stats[1]].mean()
-    ax.hlines(y=stat2_mean, xmin=0, xmax=5.5, colors='gray', linewidth=2)
-    ax.vlines(x=stat1_mean, ymin=0, ymax=1.2, colors='gray', linewidth=2)
+    print(stat1_mean, stat2_mean)
     plot = ax.scatter(df2[stats[0]], df2[stats[1]], s=100, c=df2['nineties'], cmap='cool')
     
     # ax.set_xlim([0,350]) # prog pass/carry distance axis limits
-    ax.set_xlim([0,5.5])
-    ax.set_ylim([0,1.2])
-    cbaxes = inset_axes(ax, width="30%", height="3%", loc=1) 
+    ax.set_xlim([ax.get_xlim()[0],ax.get_xlim()[1]+((ax.get_xlim()[0]+ax.get_xlim()[1])*0.15)])
+    ax.set_ylim([ax.get_ylim()[0],ax.get_ylim()[1]])
+    cbaxes = inset_axes(ax, width="30%", height="3%", loc=2) 
     cbar = fig.colorbar(plot, cax=cbaxes, orientation="horizontal")
     cbar.set_label('90s played')
+    ax.hlines(y=stat2_mean, xmin=ax.get_xlim()[0], xmax=ax.get_xlim()[1], linestyle='dashed', colors='silver', linewidth=2)
+    ax.vlines(x=stat1_mean, ymin=ax.get_ylim()[0], ymax=ax.get_ylim()[1], linestyle='dashed', colors='silver', linewidth=2)
+    ax.text(ax.get_xlim()[0], stat2_mean, "Average", color="gray", rotation="horizontal")
+    ax.text(stat1_mean, ax.get_ylim()[0]+0.5, "Average", color="gray", rotation="vertical")
     ann = []
     # font = {'font.family':'cursive'}
     for i, txt in enumerate(names):
@@ -88,11 +90,12 @@ def get_top_k(raw_data, database, percentiles):
         else:
             mask[s] = True
     # ax.set_title('Ball progression by U23 midfielders and forwards (min. 8 nineties)')
-    ax.set_title('SCA by u23 Midfielders and Forwards (min. 8 nineties)')
+    ax.set_title('u23 Midfielders and Forwards (min. 8 nineties)')
     # ax.set_xlabel('Progressive pass distance (in Yards)')
     # ax.set_ylabel('Progressive carry distance (in Yards)')
-    ax.set_xlabel('Live Pass SCA/90')
-    ax.set_ylabel('Dribbles SCA/90')
-    fname = 'plots/u23_sca'
+    ax.set_xlabel(' '.join(stats[0].split("_")))
+    ax.set_ylabel(' '.join(stats[1].split("_")))
+    # fname = 'plots/u23_sca'
+    fname = 'plots/' + stats[0] + '_vs_' + stats[1]
     print("Storing plot to: {}".format(fname))
     plt.savefig(fname, bbox_inches="tight")

@@ -232,20 +232,8 @@ def convert_to_p90(database):
             database[col] = database[col].div(database["90s"])
     return database 
 
-def main():
-    if os.path.isfile("database" and "raw_data"):
-        print("Database exists")
-        raw_data = pd.read_pickle("raw_data")
-        database = pd.read_pickle("database")
-    else:
-        print("\n ***** Creating database ***** ")
-        database = scrape_data()
-        raw_data = convert_to_numeric(database)
-        raw_data.to_pickle("raw_data")
-        database = convert_to_numeric(database) 
-        database = convert_to_p90(database)
-        database.to_pickle("database")
-
+def print_samples(raw_data, database):
+    print('\nPrinting Samples')
     string_cols = ["Rk", "Player", "Nation", "Pos", "Squad", "Comp", "Age"]
     metrics = database.columns.values
     percent = []
@@ -268,11 +256,49 @@ def main():
     # print(percentiles.loc["Mohamed Salah"]["Gls"])
 
     top = raw_data.sort_values(by=['Gls'], ascending=False).head(5)
-    print(top['Gls'])
+    print("Top-5 goal scorers: \n{}\n".format(top['Gls']))
 
+def get_percentiles(database):
+    print("Calculating percentiles")
+    string_cols = ["Rk", "Player", "Nation", "Pos", "Squad", "Comp", "Age"]
+    metrics = database.columns.values
+    percent = []
+    for m in metrics:
+        if m not in string_cols:
+            percent.append(database[m].rank(pct=True))
+        else:
+            percent.append(database[m])
+    percentiles = pd.DataFrame(percent)
+    percentiles = percentiles.transpose()
+    return percentiles
+
+def main():
+    if os.path.isfile("data/database" and "data/raw_data"):
+        print("Database exists")
+        raw_data = pd.read_pickle("data/raw_data")
+        database = pd.read_pickle("data/database")
+    else:
+        print("\n ***** Creating database ***** ")
+        database = scrape_data()
+        raw_data = convert_to_numeric(database)
+        raw_data.to_pickle("data/raw_data")
+        database = convert_to_numeric(database) 
+        database = convert_to_p90(database)
+        database.to_pickle("data/database")
+
+    # converting index of DataFrame
+    raw_data = raw_data.set_index("Player")
+    database = database.set_index("Player")
+
+    # calculating percentile ranking of players for each metric
+    percentiles = get_percentiles(database)
+    # percentiles = percentiles.set_index("Player")
+
+    return raw_data, database, percentiles
 
 if __name__ == "__main__":
-    main()
+    raw_data, database, percentiles = main()
+    print_samples(raw_data, database)
     # TODO
     # standard stats 
     # misc stats 
